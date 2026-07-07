@@ -1,0 +1,46 @@
+// ============================================
+// 全局 SCSS 变量
+// ============================================
+
+// ---- 颜色 ----
+$bg-primary: #050b14;                // 主背景色（深蓝黑，更沉稳）
+$bg-secondary: rgba(6, 20, 52, 0.75); // 面板背景（深蓝半透明）
+$border-color: rgba(0, 240, 255, 0.25); // 边框色（科技蓝绿）
+$border-glow: rgba(0, 240, 255, 0.12);  // 边框发光色
+$text-primary: #e0f0ff;              // 主文本（偏冷白）
+$text-secondary: #8aa4c8;            // 次要文本（偏冷灰蓝）
+$accent-blue: #00f0ff;               // 强调蓝（亮青）
+$accent-green: #00e676;              // 强调绿
+$accent-orange: #ff9100;             // 强调橙
+$accent-red: #ff5252;                // 强调红
+$accent-yellow: #ffeb3b;             // 强调黄
+$glow-blue: #00f0ff;                 // 发光蓝
+$glow-green: #00e676;                // 发光绿
+
+// ---- 字体 ----
+// 微软雅黑置顶作首要中文字体，Noto Sans SC 作 Web 保底，Arial 作英文回退
+$font-family: "Microsoft YaHei", "Noto Sans SC", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+$font-family-mono: "Cascadia Code", "Fira Code", "Consolas", monospace;
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-lg: 20px;
+$font-size-xl: 24px;
+$font-size-xxl: 32px;
+$font-size-title: 40px;
+
+// ---- 间距 ----
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 12px;
+$spacing-lg: 16px;
+$spacing-xl: 24px;
+$spacing-xxl: 32px;
+
+// ---- 圆角 ----
+$radius-sm: 4px;
+$radius-md: 8px;
+
+// ---- 阴影 ----
+$shadow-panel: 0 0 20px rgba(0, 240, 255, 0.12);
+$shadow-text: 0 0 10px rgba(0, 240, 255, 0.4);

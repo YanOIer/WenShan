@@ -1,0 +1,209 @@
+// ============================================
+// 全局样式
+// ============================================
+
+@use './variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: $font-family;
+  font-size: $font-size-base;
+  color: $text-primary;
+  background-color: $bg-primary;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+// 滚动条样式
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $border-color;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $accent-blue;
+}
+
+// ============================================
+// 面板通用样式（面板基础）
+// ============================================
+.panel {
+  background: $bg-secondary;
+  border: 1px solid $border-color;
+  border-radius: $radius-md;
+  padding: $spacing-lg;
+  position: relative;
+  overflow: hidden;
+}
+
+.panel__title {
+  font-size: $font-size-lg;
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: $spacing-lg;
+  padding-left: $spacing-md;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 18px;
+    background: linear-gradient(180deg, $accent-blue, transparent);
+    border-radius: 2px;
+  }
+}
+
+// ============================================
+// 科技感面板 .panel-box（带角标装饰 + 发光边框）
+// ============================================
+.panel-box {
+  @extend .panel;
+  // 顶部发光线
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba($accent-blue, 0.6), transparent);
+  }
+  // 底部发光线
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba($accent-blue, 0.3), transparent);
+  }
+}
+
+// 面板四角装饰
+.panel-box__corners {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  // 左上角
+  .corner-tl {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-top: 2px solid $accent-blue;
+    border-left: 2px solid $accent-blue;
+  }
+  // 右上角
+  .corner-tr {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    border-top: 2px solid $accent-blue;
+    border-right: 2px solid $accent-blue;
+  }
+  // 左下角
+  .corner-bl {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-bottom: 2px solid $accent-blue;
+    border-left: 2px solid $accent-blue;
+  }
+  // 右下角
+  .corner-br {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    border-bottom: 2px solid $accent-blue;
+    border-right: 2px solid $accent-blue;
+  }
+}
+
+// ============================================
+// 文字发光工具类
+// ============================================
+.text-glow {
+  text-shadow: $shadow-text;
+}
+
+.text-glow-green {
+  text-shadow: 0 0 10px rgba($accent-green, 0.5);
+}
+
+.text-glow-orange {
+  text-shadow: 0 0 10px rgba($accent-orange, 0.5);
+}
+
+// ============================================
+// 布局通用类
+// ============================================
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// 数字跳动效果
+.number-animate {
+  font-size: $font-size-xxl;
+  font-weight: 700;
+  color: $accent-blue;
+  font-variant-numeric: tabular-nums;
+  text-shadow: $shadow-text;
+  transition: all 0.3s ease;
+}
+
+// KPI 数字发光动画
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 8px rgba($accent-blue, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 18px rgba($accent-blue, 0.8), 0 0 30px rgba($accent-blue, 0.4);
+  }
+}

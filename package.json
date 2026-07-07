@@ -1,0 +1,72 @@
+{
+  "name": "wenshan",
+  "version": "1.0.0",
+  "description": "WenShan (文山) - 数据可视化大屏项目",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview --host",
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest",
+    "test:unit:ui": "vitest --ui",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "lint": "eslint . --ext .vue,.ts,.tsx --fix",
+    "format": "prettier --write \"src/**/*.{vue,ts,tsx,css,scss,json}\"",
+    "type-check": "vue-tsc --noEmit",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "data-screen",
+    "data-visualization",
+    "dashboard",
+    "echarts",
+    "vue3"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dayjs": "^1.11.13",
+    "echarts": "^5.5.1",
+    "lodash-es": "^4.17.21",
+    "mockjs": "^1.1.0",
+    "normalize.css": "^8.0.1",
+    "pinia": "^2.3.0",
+    "vue": "^3.5.13",
+    "vue-echarts": "^7.0.3",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/lodash-es": "^4.17.12",
+    "@types/mockjs": "^1.0.10",
+    "@types/node": "^22.10.5",
+    "@typescript-eslint/eslint-plugin": "^8.19.0",
+    "@typescript-eslint/parser": "^8.19.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/test-utils": "^2.4.6",
+    "@vue/tsconfig": "^0.7.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-vue": "^9.32.0",
+    "happy-dom": "^16.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.3.0",
+    "prettier": "^3.4.2",
+    "sass": "^1.83.0",
+    "typescript": "~5.6.3",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8",
+    "vue-tsc": "^2.2.0"
+  },
+  "lint-staged": {
+    "*.{vue,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss,json,md}": [
+      "prettier --write"
+    ]
+  }
+}
