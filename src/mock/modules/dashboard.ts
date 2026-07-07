@@ -1,14 +1,14 @@
 /**
- * Dashboard Mock Êı¾İÄ£¿é
+ * Dashboard Mock æ•°æ®æ¨¡å—
  *
- * Ê¾Àı£º´óÆÁÊ×Ò³µÄ Mock ½Ó¿Ú
+ * ç¤ºä¾‹ï¼šå¤§å±é¦–é¡µçš„ Mock æ¥å£
  */
 
 import Mock from 'mockjs'
 
 const Random = Mock.Random
 
-/** Éú³É¸ÅÀÀÍ³¼ÆÊı¾İ */
+/** ç”Ÿæˆæ¦‚è§ˆç»Ÿè®¡æ•°æ® */
 function generateOverviewStats() {
   return Mock.mock({
     code: 200,
@@ -24,20 +24,20 @@ function generateOverviewStats() {
   })
 }
 
-/** Éú³ÉÍ¼±íÊı¾İ */
+/** ç”Ÿæˆå›¾è¡¨æ•°æ® */
 function generateChartData(type: string) {
   return Mock.mock({
     code: 200,
     data: {
       'categories|7': ['@date("MM-dd")'],
       'values|7': ['@integer(100, 5000)'],
-      'name': () => `${type}Êı¾İ`,
+      'name': () => `${type}æ•°æ®`,
     },
     message: 'success',
   })
 }
 
-/** Éú³ÉµØÍ¼É¢µãÊı¾İ */
+/** ç”Ÿæˆåœ°å›¾æ•£ç‚¹æ•°æ® */
 function generateMapData() {
   return Mock.mock({
     code: 200,
@@ -56,7 +56,7 @@ function generateMapData() {
   })
 }
 
-/** Éú³ÉÊµÊ±Êı¾İ */
+/** ç”Ÿæˆå®æ—¶æ•°æ® */
 function generateRealtimeData() {
   return Mock.mock({
     code: 200,
@@ -71,23 +71,23 @@ function generateRealtimeData() {
   })
 }
 
-/** ×¢²á Dashboard µÄ Mock ½Ó¿Ú */
+/** æ³¨å†Œ Dashboard çš„ Mock æ¥å£ */
 export function dashboardMock() {
-  // ¸ÅÀÀÍ³¼Æ
+  // æ¦‚è§ˆç»Ÿè®¡
   Mock.mock(/\/api\/dashboard\/overview/, 'get', generateOverviewStats)
 
-  // ÕÛÏßÍ¼Êı¾İ
-  Mock.mock(/\/api\/dashboard\/chart\/line/, 'get', () => generateChartData('ÕÛÏßÍ¼'))
+  // æŠ˜çº¿å›¾æ•°æ®
+  Mock.mock(/\/api\/dashboard\/chart\/line/, 'get', () => generateChartData('æŠ˜çº¿å›¾'))
 
-  // Öù×´Í¼Êı¾İ
-  Mock.mock(/\/api\/dashboard\/chart\/bar/, 'get', () => generateChartData('Öù×´Í¼'))
+  // æŸ±çŠ¶å›¾æ•°æ®
+  Mock.mock(/\/api\/dashboard\/chart\/bar/, 'get', () => generateChartData('æŸ±çŠ¶å›¾'))
 
-  // ±ıÍ¼Êı¾İ
-  Mock.mock(/\/api\/dashboard\/chart\/pie/, 'get', () => generateChartData('±ıÍ¼'))
+  // é¥¼å›¾æ•°æ®
+  Mock.mock(/\/api\/dashboard\/chart\/pie/, 'get', () => generateChartData('é¥¼å›¾'))
 
-  // µØÍ¼Êı¾İ
+  // åœ°å›¾æ•°æ®
   Mock.mock(/\/api\/dashboard\/map/, 'get', generateMapData)
 
-  // ÊµÊ±¼à¿ØÊı¾İ
+  // å®æ—¶ç›‘æ§æ•°æ®
   Mock.mock(/\/api\/dashboard\/realtime/, 'get', generateRealtimeData)
 }
